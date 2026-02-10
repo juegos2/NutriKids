@@ -1,0 +1,12 @@
+
+
+#loader {
+    position: fixed;
+    inset: 0;
+    background: #1e1e2f;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}

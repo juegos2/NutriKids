@@ -1,0 +1,37 @@
+
+body.splash-activo {
+    overflow: hidden;
+}
+
+#splash {
+    position: fixed;
+    width: 100%;
+    background: #F4FFF4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow: hidden; /* oculta scroll vertical y horizontal */
+    height: 100vh;    /* asegura que ocupe toda la ventana */
+}
+
+#splash img {
+    width: 900px;
+    height: auto;
+    margin-bottom: 50px;
+    animation: inflar 1.3s ease-in-out infinite;
+
+}
+
+@keyframes inflar {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.08);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

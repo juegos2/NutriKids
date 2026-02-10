@@ -1,0 +1,44 @@
+
+/* Bloquear scroll */
+body.no-scroll {
+    overflow: hidden; /* evita scroll vertical y horizontal */
+}
+
+#login-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.login-card {
+    background: white;
+    color: black;
+    padding: 30px;
+    width: 300px;
+    border-radius: 15px;
+}
+
+.login-card input {
+    width: 275px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.login-card button {
+    margin-top: 15px;
+    width: 100%;
+    padding: 10px;
+    background: #4CAF50;
+    border: none;
+    color: white;
+    border-radius: 8px;
+}
+
+.login-card button:hover {
+    background: #3e9242;
+}

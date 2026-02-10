@@ -1,0 +1,272 @@
+/* ==============================
+   RESET
+================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ==============================
+   PANTALLAS GENERALES
+================================ */
+.pantalla {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ==============================
+   INTRO
+================================ */
+.pantalla-intro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../img/juego2/fondo2.png");
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    padding: 20px;
+    z-index: 5;
+}
+
+/* ==============================
+   IMAGEN TÍTULO (INTRO)
+================================ */
+.titulo-wrapper {
+    opacity: 0;
+    transform: scale(0.4);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.titulo-wrapper.mostrar {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.titulo-wrapper.ocultar {
+    opacity: 0;
+    transform: scale(0.4);
+}
+
+/* ANIMACIÓN SUAVE */
+@keyframes flotar {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+}
+
+.imagen-animada {
+    animation: flotar 1.5s ease-in-out infinite;
+}
+
+/* ==============================
+   BOTÓN INTRO
+================================ */
+#boton-inicio {
+    margin-top: 70px;
+    font-size: 90px;
+    width: 150px;
+    height: 140px;
+    border: none;
+    background: white;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    opacity: 0;
+    transform: scale(0.4);
+}
+
+#boton-inicio.mostrar {
+    opacity: 1;
+    transform: scale(1);
+}
+
+#boton-inicio:hover {
+    transform: scale(1.1);
+}
+
+/* ==============================
+   CONTENIDO Y RESULTADO
+================================ */
+#contenido,
+#resultado {
+    position: relative;
+    z-index: 2;
+    width: 100vw;
+    display: none;
+    background-image: url("../img/juego2/fondo2.png");
+    background-size: cover;
+    background-position: center top;
+}
+
+/* ==============================
+   TARJETA DEL JUEGO
+================================ */
+.tarjeta-juego {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    width: 700px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    opacity: 0;
+    transform: scale(0.85);
+    transition: opacity 0.5s ease, transform 0.5s ease; 
+}
+
+.tarjeta-juego.mostrar {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.tarjeta-juego.ocultar {
+    opacity: 0;
+    transform: scale(0.85);
+}
+
+.imagen-pregunta {
+    width: 350px;
+    height: auto;
+    margin-bottom: 10px;
+    animation:
+        orbita 4s linear infinite,
+        vibracion 1s ease-in-out infinite alternate;
+        
+    will-change: transform;
+}
+@keyframes orbita{
+    0%   { transform: translate(0px, 6px); }
+    25%  { transform: translate(6px, 0px); }
+    50%  { transform: translate(0px, -6px); }
+    75%  { transform: translate(-6px, 0px); }
+    100% { transform: translate(0px, 6px); }
+}
+@keyframes vibracion{
+    0%   { rotate: -0.8deg; }
+    100% { rotate: 0.8deg; }
+}
+
+/* Título */
+.tarjeta-juego h1 {
+    color: #61A2FF;
+    margin-bottom: 20px;
+    font-size: 45px;
+}
+
+.tarjeta-juego h2 {
+    margin-bottom: 30px;
+}
+
+.tarjeta-juego p {
+    font-size: 18px;
+    margin-bottom: 0px;
+}
+
+.tarjeta-juego a {
+    display: inline-block;
+    margin-top: 0px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+
+/* ==============================
+   OPCIONES
+================================ */
+.opciones {
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.opcion {
+    padding: 18px;
+    border-radius: 12px;
+    border: none;
+    background: #61A2FF;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.2s ease;
+}
+
+.opcion:hover {
+    transform: scale(1.05);
+}
+
+/* ==============================
+   TEXTO
+================================ */
+#mensaje {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* ==============================
+   TARJETA DE RESULTADO - MARCO
+================================ */
+.resultado-box {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.resultado-line {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-radius: 12px;
+    background: #f0f0f0;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* ==============================
+   CONFETI
+================================ */
+#confeti-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 10;
+}
+
+a[href="index.html"] {
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.3s; /* transición suave para el color */
+    color: black;            /* color inicial */
+}
+
+a[href="index.html"]::before {
+    content: "↪";           /* flecha de cabeza */
+    display: inline-block;
+    transform: rotate(180deg);
+    margin-right: 4px;
+    transition: color 0.3s;
+}
+
+/* Hover: cambia el color de texto y flecha */
+a[href="index.html"]:hover,
+a[href="index.html"]:hover::before {
+    color: rgb(60, 177, 255);             /* color al pasar el mouse */
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combinaciones saludables - NutriKids</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/juego3.css">
+    <link rel="icon" type="image/png" href="img/principales/icono.png">
+</head>
+<body>
+
+<main>
+    <div class="contenido c3">
+
+        <!-- INTRO / PRESENTACIÓN -->
+        <div id="intro-juego" class="pantalla pantalla-intro">
+            <div class="titulo-wrapper">
+                <img src="img/juego3/titulo3.png" id="titulo3" class="imagen-animada" alt="titulo">
+            </div>
+            <button id="boton-inicio">▶</button>
+        </div>
+
+        <!-- TARJETA DEL JUEGO -->
+        <div id="contenido" class="pantalla" style="display: none;">
+            <div class="tarjeta-juego">
+                <h1>Origen de los Alimentos</h1>
+                <h2>Arrastra solo los alimentos saludables</h2>
+
+                <div class="foods" id="foods-container">
+                    <!-- Los alimentos se cargan dinámicamente desde JS -->
+                </div>
+
+                <p id="mensaje"></p>
+
+                <div class="basket" id="basket">
+                    <img src="img/juego3/basket.png" alt="canasta">
+                </div>
+
+                <br><br>
+                <a href="index.html">Volver al menú</a>
+            </div>
+        </div>
+
+        <!-- RESULTADO FINAL -->
+        <div id="resultado" class="pantalla" style="display: none;">
+            <div class="tarjeta-juego">
+                <h1>Juego terminado</h1>
+                <h2>¡Enhorabuena <span id="res-nombre"></span>!</h2>
+                <img src="img/principales/copa.png" alt="copita">
+
+                <div class="resultado-box">
+                    <div class="resultado-line">
+                        <span class="label">Puntaje:</span>
+                        <span class="valor" id="res-puntaje-puntos"></span>
+                    </div>
+                    <div class="resultado-line">
+                        <span class="label">Aciertos:</span>
+                        <span class="valor" id="res-puntaje-aciertos"></span>
+                    </div>
+                </div>
+
+                <br>
+                <a href="index.html">Volver al menú</a>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<canvas id="confeti-canvas"></canvas>
+
+<script src="js/juego3.js"></script>
+</body>
+</html>
